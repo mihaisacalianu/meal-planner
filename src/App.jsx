@@ -1,12 +1,12 @@
-import { useState } from 'react'
 import './App.css'
+import SideBar from './components/SideBar'
 
 function App() {
 
   return (
-    <>
-     <h1 className='text-9xl'>app is ready</h1>
-    </>
+    <main>
+     <SideBar/>
+    </main>
   )
 }
 

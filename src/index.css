@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+body{
+  box-sizing: border-box;
+}
+
+.active{
+  background-color: rgb(74, 228, 87);
+  padding: 4px;
+  width: 100%;
+  border-radius: 6px;
+  color: white;
+  font-weight: 200;
+}
