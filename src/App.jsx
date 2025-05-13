@@ -1,11 +1,12 @@
-import './App.css'
-import SideBar from './components/SideBar'
+import SideBar from './components/SideBar.jsx'
+import Header from './components/Header.jsx'
 
 function App() {
 
   return (
-    <main>
+    <main className='flex justify-end'>
      <SideBar/>
+     <Header/>
     </main>
   )
 }
