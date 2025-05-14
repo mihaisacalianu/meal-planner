@@ -2,7 +2,7 @@ import avatar from "../assets/avatar.jpeg";
 import { NavLink } from 'react-router-dom';
 function SideBar() {
   return (
-    <section className='hidden  row-span-full sm:flex flex-col shadow-lg sm:absolute top-0 left-0 p-4 gap-3 h-[100dvh] min-w-[15%] items-center'>
+    <section className='hidden  row-span-full sm:flex flex-col shadow-lg sm:sticky top-0 left-0 p-4 gap-3 h-[100dvh] min-w-[15%] items-center'>
       <h1 className='text-3xl text-green-500 mb-10'><strong>OSACAM</strong></h1>
       <div aria-label="User photo greeting message and email address" className="flex flex-col items-center gap-2">
         <img src={avatar} alt="user avatar" className="rounded-full w-[60px] shadow-lg"/>
