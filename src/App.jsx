@@ -1,21 +1,40 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import NoRecipe from './pages/NoRecipe.jsx';
-import SideBar from './components/SideBar.jsx';
-import Header from './components/Header.jsx';
 import NewRecipe from './pages/NewRecipe.jsx';
 import Recipes from './pages/Recipes.jsx';
 import MealPage from './pages/MealPage.jsx';
+import RootLayout from './pages/Root.jsx';
+import ErrorPage from './pages/Error.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import Profile from './pages/Profile.jsx';
+import MealPlan from './pages/MealPlan.jsx';
+import Messages from './pages/Messages.jsx';
+import FAQ from './pages/FAQ.jsx';
 
 function App() {
 
+const router = createBrowserRouter([
+    // first path used for displaying header and sidebar on every pages
+    { path:'/',
+      element: <RootLayout/>,
+      errorElement: <ErrorPage/>,
+      children:[
+        // path definitions for each component
+        {path:'/', element: <Dashboard/>},
+        {path:'/profile',element: <Profile/>},
+        {path:'/recipes', element: <Recipes/>},
+        {path:'/plan', element: <MealPlan/>},
+        {path:'/messages', element: <Messages/>},
+        {path:'/faq', element: <FAQ/>},
+        {path:'/new', element: <NewRecipe/>}
+      ]
+    },
+  ]);
+
+
   return (
-    <main className='grid grid-cols-[15vw_1fr] grid-rows-[60px_1fr] h-screen'>
-     <SideBar/>
-     <Header/>
-     {/* <NoRecipe/> */}
-     {/* <NewRecipe/> */}
-     {/* <Recipes/> */}
-     <MealPage/>
-    </main>
+    <RouterProvider router={router}/>
   )
 }
 
