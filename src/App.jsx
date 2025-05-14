@@ -2,6 +2,7 @@ import NoRecipe from './pages/NoRecipe.jsx';
 import SideBar from './components/SideBar.jsx';
 import Header from './components/Header.jsx';
 import NewRecipe from './pages/NewRecipe.jsx';
+import Recipes from './pages/Recipes.jsx';
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
      <SideBar/>
      <Header/>
      {/* <NoRecipe/> */}
-     <NewRecipe/>
+     {/* <NewRecipe/> */}
+     <Recipes/>
     </main>
   )
 }

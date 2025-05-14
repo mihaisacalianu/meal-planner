@@ -1,0 +1,26 @@
+import { IoTime } from "react-icons/io5";
+import { PiCookingPotFill } from "react-icons/pi";
+
+function RecipeCard() {
+  return (
+    <article className='flex flex-col rounded-xl shadow-lg w-[30%] h-[45%]items-center' >
+      <img src="https://images.immediate.co.uk/production/volatile/sites/30/2022/04/Air-Fryer-Baked-Potatoes-4fde688.jpg?quality=90" alt="recipe card image" className='w-full rounded-t-xl' />
+      <div className="flex flex-col w-[100%] mt-2" aria-label='meal description container'>
+        <h3 className='px-6 text-xl'><strong>Jacket Potato</strong></h3>
+        <div className="flex items-center gap-4 border-b-1 border-gray-200 pb-2 px-6 text-gray-400" aria-label='meal additional information'>
+          <IoTime className="text-green-400"/>
+          <p>20 minutes</p>
+          <PiCookingPotFill className="text-orange-400"/>
+          <p>9 ingredients</p>
+        </div>
+      </div>
+      <div className=" flex gap-2 text-gray-400 justify-center h-[50px]">
+        <button>Share</button>
+        <button className="border-x-2 border-gray-200 px-3">Edit</button>
+        <button>Delete</button>
+      </div>
+    </article>
+  )
+}
+
+export default RecipeCard
