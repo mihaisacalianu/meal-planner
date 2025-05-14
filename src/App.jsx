@@ -1,6 +1,7 @@
 import NoRecipe from './pages/NoRecipe.jsx';
 import SideBar from './components/SideBar.jsx';
 import Header from './components/Header.jsx';
+import NewRecipe from './pages/NewRecipe.jsx';
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
     <main className='grid grid-cols-[15vw_1fr] grid-rows-[60px_1fr] h-screen'>
      <SideBar/>
      <Header/>
-     <NoRecipe/>
+     {/* <NoRecipe/> */}
+     <NewRecipe/>
     </main>
   )
 }
