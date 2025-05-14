@@ -7,8 +7,15 @@ body{
 .active{
   background-color: rgb(74, 228, 87);
   padding: 4px;
-  width: 100%;
   border-radius: 6px;
   color: white;
   font-weight: 200;
+  width: 100%;
+}
+
+input, textarea{
+  border-radius: 6px;
+  border: 1px solid rgb(199, 192, 192);
+  padding: 5px;
+  margin: 5px 0;
 }

@@ -12,6 +12,7 @@ function SideBar() {
       <div className="flex flex-col items-center gap-4 mt-10 w-[90%]" aria-label="navigation buttons">
         <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Dashboard</NavLink>
         <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Your Profile</NavLink>
+        <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Recipes</NavLink>
         <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Meal Plans</NavLink>
         <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Messages</NavLink>
         <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>FAQ</NavLink>
