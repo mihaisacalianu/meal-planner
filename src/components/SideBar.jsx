@@ -10,12 +10,12 @@ function SideBar() {
         <p className="text-[0.75rem] text-gray-400">mihaisacalianu@gmail.com</p>
       </div>
       <div className="flex flex-col items-center gap-4 mt-10 w-[90%]" aria-label="navigation buttons">
-        <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Dashboard</NavLink>
-        <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Your Profile</NavLink>
-        <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Recipes</NavLink>
-        <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Meal Plans</NavLink>
-        <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>Messages</NavLink>
-        <NavLink to=""  className={({ isActive }) => isActive ? 'active' : ''}>FAQ</NavLink>
+        <NavLink to="/"  className={({ isActive }) => isActive ? 'active' : 'text-red-200'}>Dashboard</NavLink>
+        <NavLink to="/profile"  className={({ isActive }) => isActive ? 'active' : ''}>Your Profile</NavLink>
+        <NavLink to="/recipes"  className={({ isActive }) => isActive ? 'active' : ''}>Recipes</NavLink>
+        <NavLink to="/plan"  className={({ isActive }) => isActive ? 'active' : ''}>Meal Plans</NavLink>
+        <NavLink to="/messages"  className={({ isActive }) => isActive ? 'active' : ''}>Messages</NavLink>
+        <NavLink to="/FAQ"  className={({ isActive }) => isActive ? 'active' : ''}>FAQ</NavLink>
         <button to="" className="mt-10 bg-gray-200 w-[100%] p-2 rounded-md">Log out</button>
       </div>
     </section>
