@@ -3,6 +3,7 @@ import SideBar from './components/SideBar.jsx';
 import Header from './components/Header.jsx';
 import NewRecipe from './pages/NewRecipe.jsx';
 import Recipes from './pages/Recipes.jsx';
+import MealPage from './pages/MealPage.jsx';
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
      <Header/>
      {/* <NoRecipe/> */}
      {/* <NewRecipe/> */}
-     <Recipes/>
+     {/* <Recipes/> */}
+     <MealPage/>
     </main>
   )
 }
