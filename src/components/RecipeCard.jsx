@@ -18,7 +18,7 @@ function RecipeCard({meal}) {
         </div>
         <div className=" flex gap-2 text-gray-400 justify-center h-[50px]">
           <button>Share</button>
-          <button className="border-x-2 border-gray-200 px-3">Edit</button>
+          <Link to={`${meal.id}/edit`}  className="border-x-2 border-gray-200 px-3">Edit</Link>
           <button>Delete</button>
         </div>
       </Link>

@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import NoRecipe from './pages/NoRecipe.jsx';
+import EditRecipe from "./pages/EditRecipe.jsx";
 import NewRecipe from './pages/NewRecipe.jsx';
 import Recipes from './pages/Recipes.jsx';
 import RecipePage, {loader as MealLoader} from './pages/RecipePage.jsx';
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
         {path:'profile',element: <Profile/>},
         {path:'recipes', id:'recipes', element: <Recipes/>, loader:MealsLoader},
         {path:'recipes/:id',element: <RecipePage/>, loader: MealLoader},
+        {path:'recipes/:id/edit',element: <EditRecipe/>},
         {path:'plan', element: <MealPlan/>},
         {path:'messages', element: <Messages/>},
         {path:'faq', element: <FAQ/>},
