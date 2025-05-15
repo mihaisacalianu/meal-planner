@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import NoRecipe from './pages/NoRecipe.jsx';
 import EditRecipe from "./pages/EditRecipe.jsx";
-import NewRecipe from './pages/NewRecipe.jsx';
+import NewRecipe, {action as newRecipeAction} from './pages/NewRecipe.jsx';
 import Recipes from './pages/Recipes.jsx';
 import RecipePage, {loader as MealLoader} from './pages/RecipePage.jsx';
 import RootLayout from './pages/Root.jsx';
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         {path:'plan', element: <MealPlan/>},
         {path:'messages', element: <Messages/>},
         {path:'faq', element: <FAQ/>},
-        {path:'new', element: <NewRecipe/>}
+        {path:'new', element: <NewRecipe/>, action: newRecipeAction}
       ]
     },
   ]);
