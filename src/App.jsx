@@ -25,8 +25,14 @@ const router = createBrowserRouter([
         {index:true , element: <Dashboard/>},
         {path:'profile',element: <Profile/>},
         {path:'recipes', id:'recipes', element: <Recipes/>, loader:MealsLoader},
-        {path:'recipes/:id',element: <RecipePage/>, loader: MealLoader},
-        {path:'recipes/:id/edit',element: <EditRecipe/>},
+        {path:'recipes/:id',
+         loader: MealLoader,
+         id: 'meal-detail',
+         children: [
+          {index: true, element: <RecipePage/>},
+          {path:'edit',element: <EditRecipe/>},
+         ]
+        },
         {path:'plan', element: <MealPlan/>},
         {path:'messages', element: <Messages/>},
         {path:'faq', element: <FAQ/>},

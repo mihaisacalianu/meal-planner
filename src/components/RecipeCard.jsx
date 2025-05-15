@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function RecipeCard({meal}) {
   return (
     <article className='flex flex-col rounded-xl shadow-lg w-[30%] h-[45%]items-center' >
-      <Link to={`/recipes/${meal.id}`}>
+      <Link to={`${meal.id}`}>
         <img src="https://images.immediate.co.uk/production/volatile/sites/30/2022/04/Air-Fryer-Baked-Potatoes-4fde688.jpg?quality=90" alt="recipe card image" className='w-full rounded-t-xl' />
         <div className="flex flex-col w-[100%] mt-2" aria-label='meal description container'>
           <h3 className='px-6 text-xl'><strong>{meal.title}</strong></h3>

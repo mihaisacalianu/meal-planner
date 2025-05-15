@@ -1,11 +1,11 @@
 import { IoTime } from "react-icons/io5";
 import { PiCookingPotFill } from "react-icons/pi";
 import { Link, useParams } from "react-router-dom";
-import { useLoaderData } from "react-router-dom";
+import { useRouteLoaderData } from "react-router-dom";
 
 function RecipePage() {
   const params = useParams();
-  const meals = useLoaderData('recipes');
+  const meals = useRouteLoaderData('meal-detail');
   console.log('look here: ',meals);
   return (
     <section className='flex gap-5 col-start-2 bg-gray-50  row-start-2  p-5'>

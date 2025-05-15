@@ -1,5 +1,4 @@
 import RecipeCard from '../components/RecipeCard.jsx';
-
 import { useLoaderData } from 'react-router-dom';
 
 function Recipes() {
