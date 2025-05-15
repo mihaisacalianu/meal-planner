@@ -1,9 +1,12 @@
 import { IoTime } from "react-icons/io5";
 import { PiCookingPotFill } from "react-icons/pi";
 import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 function RecipePage() {
   const params = useParams();
+  const meals = useLoaderData('recipes');
+  console.log('look here: ',meals);
   return (
     <section className='flex gap-5 col-start-2 bg-gray-50  row-start-2  p-5'>
       <div className="w-[50%] bg-white rounded-xl shadow-lg" aria-label='meal details container'>
@@ -11,9 +14,9 @@ function RecipePage() {
         <div className=" flex justify-between border-b-2 border-gray-200" aria-label="utility container">
           <div className="flex gap-2 items-center"  aria-label='utility meal info container'>
             <IoTime className="text-green-400"/>
-            <p>20 minutes</p>
+            <p>{meals.time} minutes</p>
             <PiCookingPotFill className="text-orange-400"/>
-            <p>9 ingredients</p>
+            <p>{meals.serving} ingredients</p>
           </div>
           <div className="" aria-label='utility buttons container'>
             <button>Share</button>
@@ -52,3 +55,14 @@ function RecipePage() {
 }
 
 export default RecipePage;
+
+export async function loader({params}) {
+  const id = params.id
+  const response = await fetch("https://6823283065ba058033957fbd.mockapi.io/meals/" + id);
+   if(!response.ok){
+      throw {message: "could not fecth meals"};
+    }else{
+      const resData = await response.json();
+      return resData;
+    }
+}
