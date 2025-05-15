@@ -3,6 +3,7 @@ import { PiCookingPotFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 function RecipeCard({meal}) {
+
   return (
     <article className='flex flex-col rounded-xl shadow-lg w-[30%] h-[45%]items-center' >
       <Link to={`${meal.id}`}>
@@ -19,11 +20,10 @@ function RecipeCard({meal}) {
         <div className=" flex gap-2 text-gray-400 justify-center h-[50px]">
           <button>Share</button>
           <Link to={`${meal.id}/edit`}  className="border-x-2 border-gray-200 px-3">Edit</Link>
-          <button>Delete</button>
         </div>
       </Link>
     </article>
   )
 }
 
-export default RecipeCard
+export default RecipeCard;

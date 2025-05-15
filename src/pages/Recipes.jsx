@@ -1,5 +1,5 @@
 import RecipeCard from '../components/RecipeCard.jsx';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData} from 'react-router-dom';
 
 function Recipes() {
   const meals = useLoaderData();
@@ -14,7 +14,7 @@ function Recipes() {
 export default Recipes
 
 export async function loader() {
-   const response = await fetch("https://6823283065ba058033957fbd.mockapi.io/meals");
+   const response = await fetch("https://6823283065ba058033957fbd.mockapi.io/recipes");
     if(!response.ok){
       throw {message: "could not fecth meals"};
     }else{
@@ -22,3 +22,16 @@ export async function loader() {
       return resData;
     }
 }
+
+// export async function action({params}){
+//   const recipeId = params.id;
+//   const response = await fetch('https://6823283065ba058033957fbd.mockapi.io/recipes/'+recipeId, {
+//     method: 'DELETE',
+//     headers: { 'Content-Type':'application/json'}
+//   })
+//   if(!response.ok){
+//     throw {message: "could not fetch meals"};
+//   }
+
+//   return redirect("/recipes");
+// }

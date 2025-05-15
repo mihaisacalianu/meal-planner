@@ -1,12 +1,22 @@
 import { IoTime } from "react-icons/io5";
 import { PiCookingPotFill } from "react-icons/pi";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useSubmit,redirect} from "react-router-dom";
 import { useRouteLoaderData } from "react-router-dom";
 
 function RecipePage() {
   const params = useParams();
+  const submit = useSubmit();
   const meals = useRouteLoaderData('meal-detail');
   console.log('look here: ',meals);
+
+  function handleDelete() {
+    const confirmation = window.confirm('Are you sure you want to delete this meal?');
+    if (confirmation){
+      submit(null, {method:'delete'});
+    }
+  }
+
+
   return (
     <section className='flex gap-5 col-start-2 bg-gray-50  row-start-2  p-5'>
       <div className="w-[50%] bg-white rounded-xl shadow-lg" aria-label='meal details container'>
@@ -21,7 +31,7 @@ function RecipePage() {
           <div className="" aria-label='utility buttons container'>
             <button>Share</button>
             <Link to="edit" className="border-x-2 border-gray-200 px-3">Edit</Link>
-            <button>Delete</button>
+            <button onClick={handleDelete}>Delete</button>
           </div>
         </div>
 
@@ -58,11 +68,23 @@ export default RecipePage;
 
 export async function loader({params}) {
   const id = params.id
-  const response = await fetch("https://6823283065ba058033957fbd.mockapi.io/meals/" + id);
+  const response = await fetch("https://6823283065ba058033957fbd.mockapi.io/recipes/" + id);
    if(!response.ok){
       throw {message: "could not fecth meals"};
     }else{
       const resData = await response.json();
       return resData;
     }
+}
+export async function action({params}){
+  const recipeId = params.id;
+  console.log('recipeId',recipeId);
+  const response = await fetch('https://6823283065ba058033957fbd.mockapi.io/recipes/'+recipeId, {
+    method: 'DELETE',
+    headers: { 'Content-Type':'application/json'}
+  })
+  if(!response.ok){
+    throw {message: "could not fetch meals"};
+  }
+  return redirect("/recipes");
 }
