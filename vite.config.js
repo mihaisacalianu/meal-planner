@@ -7,4 +7,8 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss()
   ],
+  test: {
+    // 👋 add the line below to add jsdom to vite
+    environment: 'jsdom',
+  }
 })
