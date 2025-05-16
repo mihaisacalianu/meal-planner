@@ -31,7 +31,8 @@ function RecipePage() {
           </div>
         </div>
         <div className="flex flex-col gap-4 p-4" aria-label="directions container">
-          <h3><span>Directions</span></h3>
+          <h2 className="text-2xl"><strong>{meals.title}</strong></h2>
+          <h3 className="text-xl font-medium"><span>Directions</span></h3>
           {meals.directions}
         </div>
       </div>
