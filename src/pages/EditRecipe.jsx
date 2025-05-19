@@ -17,6 +17,8 @@ function EditRecipe() {
           <input type="number" name='serving' step="1" placeholder='Select number of servings' defaultValue={meals ? meals.serving : '' }/>
           <label htmlFor="directions">Directions</label>
           <textarea name='directions' placeholder='Enter recipe directions' rows="6" cols="50" defaultValue={meals ? meals.directions : '' }/>
+           <label htmlFor="ingredients">Ingredients</label>
+          <textarea name='ingredients' placeholder='Enter recipe ingredients' rows="6" cols="50" defaultValue={meals ? meals.ingredients : '' }/>
           <button type='submit' className='active mt-5 mx-auto'>Save Recipe</button>
         </Form>
       </div>
