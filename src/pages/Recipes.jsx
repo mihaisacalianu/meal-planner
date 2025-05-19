@@ -1,12 +1,13 @@
 import RecipeCard from '../components/RecipeCard.jsx';
 import { useLoaderData} from 'react-router-dom';
+import NoRecipe from './NoRecipe.jsx';
 
 function Recipes() {
   const meals = useLoaderData();
 
   return (
     <section className=' flex flex-wrap gap-4 col-start-2  row-start-2 m-5 rounded-xl shadow-lg p-5 justify-center'>
-      {meals.length > 0 && meals.map((meal)=> <RecipeCard key={meal.id} meal={meal}/>)}
+      {meals.length > 0 ? meals.map((meal)=> <RecipeCard key={meal.id} meal={meal}/>) : <NoRecipe/> }
     </section>
   )
 }

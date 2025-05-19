@@ -8,7 +8,6 @@ export default defineConfig({
     tailwindcss()
   ],
   test: {
-    // 👋 add the line below to add jsdom to vite
-    environment: 'jsdom',
+    environment: "happy-dom"
   }
 })

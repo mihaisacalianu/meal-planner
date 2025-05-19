@@ -38,15 +38,10 @@ function RecipePage() {
       </div>
       <div className="w-[50%] bg-white rounded-xl shadow-lg" aria-label='meal ingredients container'>
         <div className="flex flex-col gap-4 p-4" aria-label="directions container">
-          <h3>Ingredients</h3>
-          <h2>Number of servings slider</h2>
-          <ol>
-            <li>Preaheat the oven to 220C</li>
-            <li>Preaheat the oven to 220C</li>
-            <li>Preaheat the oven to 220C</li>
-            <li>Preaheat the oven to 220C</li>
-            <li>Serve with Dressing and enjoy.</li>
-          </ol>
+          <h3 className="text-green-500 text-3xl font-extrabold tracking-wide text-center">Ingredients</h3>
+          <ul>
+          {meals.ingredients.map((ingredient,index)=> <li key={index}>{ingredient}</li>)}
+          </ul>
         </div>
       </div>
     </section>
