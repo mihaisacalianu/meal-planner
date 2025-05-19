@@ -9,8 +9,12 @@ body{
   padding: 4px;
   border-radius: 6px;
   color: white;
-  font-weight: 200;
+  font-weight: 500;
   width: 100%;
+}
+
+.hover {
+  background-color: gainsboro;
 }
 
 input, textarea{
@@ -18,4 +22,10 @@ input, textarea{
   border: 1px solid rgb(199, 192, 192);
   padding: 5px;
   margin: 5px 0;
+}
+label{
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 1.2px;
+  color: rgb(33, 104, 30)
 }
